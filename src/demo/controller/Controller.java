@@ -41,7 +41,7 @@ public class Controller
 			}
 			if (p2 > 0)
 			{
-				Player2turn();
+				Player2Turn();
 			}
 		}
 	}		
@@ -236,12 +236,8 @@ public class Controller
 			{
 				System.out.println("You lost a hand!");
 			}
-		}
-	}
-
-			
-			
-			
+		} 
+	}		
 			
 			
 	if (p1 == 0)
@@ -264,5 +260,4 @@ public class Controller
 	{
 	System.out.println("Okay. Thanks for playing!");
 	}
-	
 }
