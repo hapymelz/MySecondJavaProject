@@ -38,10 +38,14 @@ public class Controller
 			{
 				Player1turn();
 				
-			}
-			if (p2 > 0)
+			} 
+			else if (p2 > 0)
 			{
 				Player2Turn();
+			}
+			else
+			{
+				EndGame();
 			}
 		}
 	}		
@@ -111,13 +115,13 @@ public class Controller
 			else if (p1attack.equals("R"))
 			{
 				rh2 = rh2 +rh1;
-				if (lh2 > 5)
+				if (rh2 > 5)
 				{
-					lh2 = lh2 - 5;
+					rh2 = rh2 - 5;
 				}
-				else if (lh2 == 5)
+				else if (rh2 == 5)
 				{
-					lh2 = 0;
+					rh2 = 0;
 					p2 = p2 - 1;
 				}
 			}
@@ -144,11 +148,12 @@ public class Controller
 			
 			
 			
-		if (lh2 == 0 || rh2 == 0); 
+		if (lh2 == 0 || rh2 == 0) 
 		{
 			System.out.println("Computer lost a hand!"); 
 		}
-			
+		
+		
 	}
 			
 			
@@ -236,28 +241,30 @@ public class Controller
 			{
 				System.out.println("You lost a hand!");
 			}
-		} 
-	}		
-			
-			
-	if (p1 == 0)
-	{
-		System.out.println("You lost!");
-	}
-	else
-	{
-		System.out.println("You won!");
+		}
 	}
 	
-	System.out.println("Would you like to play again? Y/N");
-	String playagain = input.next();
-	if (playagain.equals("Y"))
+	
+	public void EndGame()	
 	{
-		p1 = 2;
-		p2 = 2;
-	}
-	else
-	{
-	System.out.println("Okay. Thanks for playing!");
+		if (p1 == 0)
+		{
+			System.out.println("You lost!");
+		}
+		else
+		{
+			System.out.println("You won!");
+		}
+		
+		System.out.println("Would you like to play again? Y/N");
+		String playagain = input.next();
+		if (playagain.equals("Y"))
+		{
+			start();
+		}
+		else
+		{
+		System.out.println("Okay. Thanks for playing!");
+		}
 	}
 }
