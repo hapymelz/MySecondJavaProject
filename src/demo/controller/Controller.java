@@ -150,9 +150,17 @@ public class Controller
 			
 		if (lh2 == 0 || rh2 == 0) 
 		{
-			System.out.println("Computer lost a hand!"); 
+			System.out.println("Computer lost a hand!");
+			if (lh2 == 0 && rh2 == 0)
+			{
+				EndGame();
+			}
+			else
+			{
+				
+			}
 		}
-		
+
 		
 	}
 			
@@ -240,6 +248,14 @@ public class Controller
 			if (lh1 == 0 || rh1 == 0)
 			{
 				System.out.println("You lost a hand!");
+				if (lh1 == 0 && rh1 == 0)
+				{
+					EndGame();
+				}
+				else
+				{
+					
+				}
 			}
 		}
 	}
