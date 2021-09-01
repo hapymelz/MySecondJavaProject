@@ -26,7 +26,12 @@ public class Controller
 	{
 		System.out.println("Commencing game...");
 		System.out.println("Please only type in the letters the game prompts you to. Do not use a hand that you lost, else you waste a turn.");
-		
+		p1 = 2;
+		p1 = 2;
+		rh1 = 1;
+		lh1 = 1;
+		rh2 = 1;
+		lh2 = 1;
 		
 		
 		
@@ -75,7 +80,7 @@ public class Controller
 			} 
 			else if (p1attack.equals("R")) 
 			{
-				rh2 = rh2 + lh2;
+				rh2 = rh2 + lh1;
 				if (rh2 > 5)
 				{
 					rh2 = rh2 - 5;
@@ -88,7 +93,8 @@ public class Controller
 			} 
 			else 
 			{
-				System.out.println("Please only type in 'L' or 'R'. Restart the game to continue playing");
+				System.out.println("Please only type in 'L' or 'R'. Restarting the game...");
+				start();
 			}
 		} 
 		
@@ -160,7 +166,7 @@ public class Controller
 				
 			}
 		}
-
+		Player2Turn();
 		
 	}
 			
@@ -174,6 +180,14 @@ public class Controller
 		if (rh2 == 0)
 		{
 			p2move = 1;
+		}
+		if (lh1 == 0)
+		{
+			p2attack = 2;
+		}
+		if (rh1 == 0)
+		{
+			p2attack = 1;
 		}
 		
 		if (p2move == 1)
@@ -222,7 +236,7 @@ public class Controller
 					p1 = p1 - 1;
 				}
 			}
-			else if (p2attack == 1)
+			else if (p2attack == 2)
 			{
 				rh1 = rh1 + rh2;
 				if (rh1 > 5)
@@ -244,7 +258,9 @@ public class Controller
 			{
 				yourHand = "Right";
 			}
+			
 			System.out.println("Computer chose to attack your " + yourHand + " hand with their " + theirHand + " hand.");
+			
 			if (lh1 == 0 || rh1 == 0)
 			{
 				System.out.println("You lost a hand!");
